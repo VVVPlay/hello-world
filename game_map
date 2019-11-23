@@ -1,0 +1,30 @@
+class Map:
+    s = 0
+    map =[]
+
+    def __init__(self):
+        self.create_map()
+        self.show_map()
+
+    def create_map(self):
+        self.s = int(input("Введите размер карты: "))
+        map_s = []
+        i = 0
+        while i < self.s:
+            map_s.append(0)
+            i += 1
+        else:
+            i = 0
+        while i < self.s:
+            self.map.append(map_s)
+            i += 1
+
+    def show_map(self):
+        q = ""
+        for i in self.map:
+            for i in i:
+                q = q + str(i) + "  "
+            else:
+                q = ""
+
+m1 = Map()
