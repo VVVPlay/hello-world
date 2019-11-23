@@ -1,0 +1,33 @@
+class Pers:
+    name = ""
+    hp = 0
+    en = 0
+    m = 0
+    r = ""
+    cl = ""
+
+    def __init__(self, map):
+        while True :
+            self.name = input("Введите имя персонажа: ")
+            z = input("Вы уверены? ")
+            if z == "да":
+                break
+            else:
+                pass
+
+        for  in races:
+            print(i)
+            self.r = input("Выберите расу: ")
+            self.hp = races[self.r][0]
+            self.en = races[self.r][1]
+            self.m = races[self.r][2]
+
+        for i in classes:
+            print(i)
+            self.cl = input("Выберите класс: ")
+            self.hp = self.hp + classes[self.cl][0]
+            self.en = self.en + classes[self.cl][1]
+            self.m = self.m + classes[self.cl][2]
+
+        print("Вас зовут ", self.name, "вы ", self.r,"-", self.cl)
+        print("Ваши параметры: здоровье - ", self.hp, ", энергия - ", self.en, ", мана - ", self.m)
