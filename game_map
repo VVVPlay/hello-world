@@ -1,20 +1,29 @@
 class Map:
     s = 0
-    map =[]
+    map = []
 
     def __init__(self):
         self.cr_map()
         self.sh_map()
-        self.a
 
     def cr_map(self):
-        self.a = int(input("Введите размер карты: "))
-        self.mas1 = []
-        
-        for i in range(self.a):
-            self.mas1.append([])
-            for i in range(self.a):
-                self.mas1[i]
-        
+        self.s = int(input("Введите размер карты: "))
+        map_s = []
+        i = 0
+        while i < self.s:
+            map_s.append(0)
+            i += 1
+        else:
+            i = 0
+        while i < self.s:
+            self.map.append(map_s)
+            i += 1
+
     def sh_map(self):
-        
+        sl = ''
+        for i in self.map:
+            for i in i:
+                sl = sl + str(i) + '  '
+            else:
+                print(sl)
+                sl = ''
