@@ -7,6 +7,9 @@ class Pers:
     m = 0
     r = ""
     cl = ""
+    ot = ""
+    x = 0
+    y = 0
 
     def __init__(self, map):
         while True :
@@ -31,5 +34,41 @@ class Pers:
         self.en = self.en + classes[self.cl][1]
         self.m = self.m + classes[self.cl][2]
 
-        print("Вас зовут ", self.name, "вы ", self.r,"-", self.cl)
-        print("Ваши параметры: здоровье - ", self.hp, ", энергия - ", self.en, ", мана - ", self.m)
+        print("Вас зовут", self.name, ", вы ", self.r,"-", self.cl)
+        print("Ваши параметры: здоровье -", self.hp, ", энергия -", self.en, ", мана -", self.m)
+    def move(self, map):
+        self.ot = input("Введите символ вашего отображения: ")
+        map[self.x][self.y] = self.ot
+        self.g = input('Двигайтесь с помощью wasd!')
+        if self.g == "w":
+            if self.x == 0:
+                print('Ты не пройдешь!')
+            else:
+                map.map_s[self.x][self.y] = '0'
+                self.x -= 1
+                map.map_s[self.x][self.y] = self.ot
+            Map.sh_map()
+        elif self.g == "s":
+            if self.x == map.a - 1:
+                print('Ты не пройдешь!')
+            else:
+                map.map_s[self.x][self.y] = '0'
+                self.x += 1
+                map.map_s[self.x][self.y] = self.ot
+            Map.sh_map()
+        elif self.g == "d":
+            if self.y == map.a - 1:
+                print('Ты не пройдешь!')
+            else:
+                map.map_s[self.x][self.y] = '0'
+                self.y += 1
+                map.map_s[self.x][self.y] = self.ot
+            Map.sh_map()
+        elif self.g == "a":
+            if self.y == 0:
+                print('Ты не пройдешь!')
+            else:
+                map.map_s[self.x][self.y] = '0'
+                self.y -= 1
+                map.map_s[self.x][self.y] = self.ot
+            Map.sh_map()
