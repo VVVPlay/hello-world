@@ -1,3 +1,4 @@
+from lists import races, classes
 class Pers:
     name = ""
     hp = 0
@@ -15,19 +16,19 @@ class Pers:
             else:
                 pass
 
-        for  in races:
+        for i in races:
             print(i)
-            self.r = input("Выберите расу: ")
-            self.hp = races[self.r][0]
-            self.en = races[self.r][1]
-            self.m = races[self.r][2]
+        self.r = input("Выберите расу: ")
+        self.hp = races[self.r][0]
+        self.en = races[self.r][1]
+        self.m = races[self.r][2]
 
         for i in classes:
             print(i)
-            self.cl = input("Выберите класс: ")
-            self.hp = self.hp + classes[self.cl][0]
-            self.en = self.en + classes[self.cl][1]
-            self.m = self.m + classes[self.cl][2]
+        self.cl = input("Выберите класс: ")
+        self.hp = self.hp + classes[self.cl][0]
+        self.en = self.en + classes[self.cl][1]
+        self.m = self.m + classes[self.cl][2]
 
         print("Вас зовут ", self.name, "вы ", self.r,"-", self.cl)
         print("Ваши параметры: здоровье - ", self.hp, ", энергия - ", self.en, ", мана - ", self.m)
