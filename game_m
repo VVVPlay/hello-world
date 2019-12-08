@@ -1,0 +1,4 @@
+from pers import Pers
+from map import  Map
+m1 = Map()
+p1 = Pers(m1.map)
