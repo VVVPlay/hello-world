@@ -1,4 +1,5 @@
 from lists import races, classes
+from map import Map
 class Pers:
     name = ""
     hp = 0
