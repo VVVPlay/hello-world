@@ -1,5 +1,5 @@
 # hello-world
-just calculator
+just calculator mathematics
 class Calculator:
     def pl(self, a, b):
         print(a + b)
