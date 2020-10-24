@@ -1,0 +1,24 @@
+#калькуляторчик :D
+
+a = int(input())
+ac = input()
+
+if ac == "+":               #сложение
+    b = int(input())
+    print(a + b)
+    
+elif ac == "-":             #вычитание
+    b = int(input())
+    print(a - b)
+
+elif ac == "*":             #умножение
+    b = int(input())
+    print(a * b)
+
+elif ac == "/" or ":":             #деление
+    b = int(input())
+    print(a / b)
+
+elif ac == "^":             #степень
+    b = int(input())
+    print(a ** b)
