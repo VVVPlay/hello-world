@@ -1,0 +1,12 @@
+pal = input()
+def is_pal(pal):
+    if len(pal) <= 1:
+        return True
+    elif pal[0] == pal[-1]:
+        pal1 = pal[1:-1]
+        return is_pal(pal1)
+    else:
+        return False
+
+res = is_pal(pal)
+print(res)
