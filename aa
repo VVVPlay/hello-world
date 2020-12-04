@@ -1,0 +1,7 @@
+import re
+reg = "\w+[@]\w+[.]\w{2,3}"
+s = input()
+if re.fullmatch(reg, s) is not None:
+    print(True)
+else:
+    print(False)
