@@ -2,7 +2,7 @@ import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 from datetime import datetime
 
-vk = vk_api.VkApi(token='3b986a8b3c8ee095066f00f45604bc7eae2d58a58ab4aa458dd2f761586d81a46f3b9079276a42e4bfc74')
+vk = vk_api.VkApi(token='тут пишем апи группы вк')
 api = vk.get_api()
 longpoll = VkLongPoll(vk)
 def write_msg(id, text):
