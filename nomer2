@@ -1,0 +1,38 @@
+f = open('file.txt')
+n, k = map(int, f.readline().split())
+x = []
+x.extend(map(int, f.readline().split()))
+
+print(n,k)
+print(x)
+
+x.sort()
+x.reverse()
+
+print(x)
+
+y = []
+
+if len(x)%2==0:
+    l = len(x)//2
+else:
+    l = len(x)//2+1
+
+try:
+    for i in range(l):
+        y.append(x[i])
+        y.append(x[i+l])
+except IndexError:
+    l-=1
+
+print(y)
+
+if len(y)%2==0:
+    y.reverse()
+else:
+    y.reverse()
+    y.append(y[0])
+    y.reverse()
+    y.pop(-1)
+
+print(y)
