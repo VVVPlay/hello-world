@@ -14,17 +14,24 @@ for i in range(n):
     for i in range(k):
         y1[i] = int(y1[i])
     s.append(sum(y1))
+    #y.append(s[i])
     for j in range(k):
         if y1[j] < x[j]:
             res.remove(y[0])
             s.pop(0)
-
+    y=y[:-k:]
+res1 = []
 sr = sum(s)/len(s)
 for i in s:
     if i < sr:
         w = s.index(i)
         s.remove(i)
         res.pop(w)
+for i in range(len(s)):
+    res1.append([])
+    res1[i].append(res[i])
+    res1[i].append(s[i])
+res1.sort(key=lambda x:x[1], reverse=True)
 
-for i in res:
-    print(i)
+for i in res1:
+    print(i[0])
