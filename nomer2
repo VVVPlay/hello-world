@@ -3,38 +3,48 @@ n, k = map(int, f.readline().split())
 x = []
 x.extend(map(int, f.readline().split()))
 
-print(n,k)
-print(x)
 
 x.sort()
 x.reverse()
 
-print(x)
-
 y = []
 
 if len(x)%2==0:
-    l = len(x)//2
+    l = len(x)//k
+    if l==0:
+        l+=2
+    try:
+        for i in range(l):
+            y.append(x[i])
+            y.append(x[i + l])
+    except IndexError:
+        l -= 1
+
+    print(*y)
+
+    y.reverse()
+    print(*y)
+
 else:
-    l = len(x)//2+1
+    l = len(x)//k+1
 
-try:
-    for i in range(l):
-        y.append(x[i])
-        y.append(x[i+l])
-except IndexError:
-    l-=1
+    try:
+        for i in range(l):
+            y.append(x[i])
+            for j in range(k-1):
+                y.append(x[2*i+l+j])
+    except IndexError:
+        l-=(k-1)
 
-print("        ")
-
-print(y)
-
-if len(y)%2==0:
-    y.reverse()
-else:
-    y.reverse()
-    y.append(y[0])
-    y.reverse()
-    y.pop(-1)
-
-print(y)
+    print(*y)
+    l = len(x) // k + 1
+    x.reverse()
+    y.clear()
+    try:
+        for i in range(l):
+            y.append(x[i])
+            for j in range(k-1):
+                y.append(x[2*i+l+j])
+    except IndexError:
+        l-=(k-1)
+    print(*y)
