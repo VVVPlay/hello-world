@@ -1,0 +1,30 @@
+f = open('file1.txt')
+n, k = map(int, f.readline().split())
+x = []
+x.extend(map(int, f.readline().split()))
+
+res = []
+
+s = []
+for i in range(n):
+    y = []
+    y.extend(f.readline().split())
+    res.append(y[0])
+    y1 = y[1::]
+    for i in range(k):
+        y1[i] = int(y1[i])
+    s.append(sum(y1))
+    for j in range(k):
+        if y1[j] < x[j]:
+            res.remove(y[0])
+            s.pop(0)
+
+sr = sum(s)/len(s)
+for i in s:
+    if i < sr:
+        w = s.index(i)
+        s.remove(i)
+        res.pop(w)
+
+for i in res:
+    print(i)
